@@ -1,0 +1,48 @@
+
+body{
+    background: url(../img/repaparaciones.png) no-repeat center center fixed;
+    background-size: auto ;
+    animation: movi 200s infinite linear alternate;
+}
+
+/*
+.container{
+    background-image: url(../img/repaparaciones.png);
+    background-size: 200%;
+    animation: movi 100s infinite linear alternate;
+}
+*/
+@keyframes movi {
+    from{
+        background-position: bottom left;
+    }to{
+        background-position: top right;
+    }
+    
+}
+.main-section{
+    margin:0 auto;
+    margin-top: 25%;
+    padding: 0;
+    box-shadow: 0px 0px 50px 1px black;
+
+}
+
+.modal-content{
+    background-color: white;
+    opacity: .95;
+    padding: 20px;
+}
+
+.user-img{
+    margin-top: -50px;
+    margin-bottom: 35px;
+}
+
+.user-img img{
+    width: 150px;
+    height: 150px;
+    box-shadow: 0px 0px 3px #848484;
+    border-radius: 50%;
+}
+

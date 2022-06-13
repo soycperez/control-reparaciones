@@ -1,4 +1,7 @@
 <?php
 	include("../Conexion/conexion.php");
-	$coneccion=Conexion::conectar(); 
+	$coneccion=conexion::conectar(); 
+	if($coneccion){
+		echo "Conexión establecida";
+	}else echo "Error de conexión"
 ?>

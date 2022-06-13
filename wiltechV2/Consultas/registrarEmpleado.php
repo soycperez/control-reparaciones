@@ -1,12 +1,12 @@
 <?php
     include("../Conexion/conexion.php");
-	$coneccion=Conexion::conectar(); 
+	$coneccion=conexion::conectar(); 
 
     $nombre = $_POST['nombre'];
     $apellidos = $_POST['apellidos'];
     $cargo = $_POST['cargo'];
     $usuario = $_POST['usuario'];
-    $contrasenia = $_POST['nameContrasenia'];
+    $contrasenia = $_POST['contrasenia'];
 
     echo("Nombre: " .$nombre . "-> Apellidos: " . $apellidos. "-> Cargo: ". $cargo ."-> Usuario:". $usuario ."-> Contraseña:". $contrasenia);
 
@@ -21,10 +21,8 @@
         $queryEmpleado->bindParam(2, $apellidos, PDO::PARAM_STR, 50);
         $queryEmpleado->bindParam(3, $idUsuario, PDO::PARAM_INT);
         if($queryEmpleado->execute()){
-            echo'<script type="text/javascript">
-                    alert("Empleado Guardado");
-                    window.location.href="../formulario.html";
-                </script>';
+            header("Location: ../registrar-empleado.html");
+                
         }
     }
     

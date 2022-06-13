@@ -1,14 +1,14 @@
 <?php
-	class Conexion{
+	class conexion{
         public static function conectar(){
             try {
                 $cnn = new PDO("mysql:host=localhost:3307;dbname=reparaciones","root","", array(PDO::ATTR_PERSISTENT => true));
                 $cnn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);    
-                echo "Conexion establecida".  "<br>";
+                //echo "Conexion establecida".  "<br>";
                 return $cnn;
             } catch (Exception $e) {
                 echo "ERROR ".$e->getMessage();
-                echo "Fail conexion";
+                //echo "Fail conexion";
             }        
         }
     }
