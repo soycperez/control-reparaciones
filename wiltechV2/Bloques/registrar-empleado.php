@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Vista para trabajador</h1>
-    <a href="./Consultas/cerrarSesion.php">Cerrar Sesión</a>
+    <?php include("../Form/form-empleado.php"); ?>
 </body>
 </html>

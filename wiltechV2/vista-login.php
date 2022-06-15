@@ -35,8 +35,8 @@
                     <button type="submit" class="btn btn-primary mt-3"><i class="fa fa-sign-in" aria-hidden="true"></i>
                         Inciar sesión </button>
                     <?php
-                        require_once("./Consultas/logica-login.php");
-                        $dato = log::consultLogin();
+                        require_once("./Consultas/login-logica.php");
+                        $dato = login::consultLogin();
                     ?>
                     <?php if ($dato): ?>
                     <!-- alerta -->

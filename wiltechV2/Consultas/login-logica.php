@@ -1,5 +1,5 @@
 <?php
-    class log{
+    class login{
         public static function consultLogin(){
             if(isset($_POST['usuario']) && isset($_POST['contrasenia'])){
                 include ("./Conexion/conexion.php");
@@ -40,7 +40,7 @@
                     if($cargo == 'admin'){
                         header("Location: ./vista-admin.php");
                     }else{
-                       header("Location: ./trabajador.html");
+                       header("Location: ./vista-trabajador.php");
                     }
                 }else{
                     unset($result_array);
