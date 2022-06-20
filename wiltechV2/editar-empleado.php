@@ -67,7 +67,7 @@ verificar::consulAdmin();
                     <input type="text" id="usuario" name="usuario" value="<?php echo $usuario; ?>">
                     <br>
                     <b><label>Cargo:</label></b>
-                    <input type="text" id="contrasenia" readonly name="cargo" value="<?php if($cargo == 'admin') {echo "Administrador";}else echo "Tecnico"; ?>">
+                    <input type="text" id="contrasenia" readonly name="cargo" value="<?php echo $cargo; ?>">
                     <br>
                     <button class="btn btn-primary mt-3" type="submit"><i class="fa fa-paper-plane"> Editar Empleado</i></button>
                     <br>

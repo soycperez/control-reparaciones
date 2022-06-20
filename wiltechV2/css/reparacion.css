@@ -1,5 +1,5 @@
 .contenedor{
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     width: auto;
     height: 200%;
     margin: 20px;
@@ -9,7 +9,9 @@
 }
 
 .formulario{
-    border: 1px solid red;
+    border: 1px solid gray;
+    box-shadow: 0px 0px 2px .5px black;
+    border-radius: 25px;
     width: 600px;
     margin: 20px 0px;
 	padding: 20px;
@@ -36,7 +38,9 @@
 }
 
 .tablaRerapaciones{
-    border: 1px solid green;
+    border: 1px solid gray;
+    box-shadow: 0px 0px 2px .5px black;
+    border-radius: 25px;
     width: 950px;
 	margin: 20px 0px;
 	padding: 20px;
