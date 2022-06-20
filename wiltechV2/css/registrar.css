@@ -1,0 +1,53 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+section {
+    border: 1px solid black;
+    width: center;
+    margin: 20px;
+    text-align: center;
+    padding: 10px;
+}
+
+button{
+    margin-left: 25%;
+}
+
+label{
+    width: 25%;
+    display: inline-block;
+    margin: 4px;
+    padding: 3px;
+}
+
+.btnEditar{
+    border-radius: 150px;
+    padding: 5px;
+    margin: 5px;
+    background: #F4D03F;
+    display: inline;
+    text-decoration: none;
+    color: black;
+}
+.btnEditar:hover{
+        background: #F9E79F;
+        color: black;
+}
+
+
+
+.btnEliminar{
+    border-radius: 150px;
+    padding: 5px;
+    margin: 5px;
+    background: #E74C3C;
+    display: inline;
+    text-decoration: none;
+    color: black;
+}
+.btnEliminar:hover{
+        background: #F1948A;
+        color: black;
+}

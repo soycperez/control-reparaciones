@@ -47,5 +47,6 @@ nav ul{
             border-radius: 15px;
         }
         nav ul li a:hover{
-            background: #34495E;
+            background: white;
+            color: black;
         }

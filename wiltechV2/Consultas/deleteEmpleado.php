@@ -1,15 +1,7 @@
 <?php
     include("../Conexion/conexion.php");
 	$coneccion=conexion::conectar(); 
-
-    $nombre = $_POST['nombre'];
-    $apellidos = $_POST['apellidos'];
-    $cargo = $_POST['cargo'];
-    $usuario = $_POST['usuario'];
-    $contrasenia = $_POST['contrasenia'];
-
-    echo("Nombre: " .$nombre . "-> Apellidos: " . $apellidos. "-> Cargo: ". $cargo ."-> Usuario:". $usuario ."-> Contraseña:". $contrasenia);
-
+    $idUsuario = $_GET['id'];
     $queryUsiarios = $coneccion->prepare("INSERT INTO usuarios(usuario,contrasenia,cargo) VALUES (?,?,?)");
     $queryUsiarios->bindParam(1, $usuario, PDO::PARAM_STR, 50); 
     $queryUsiarios->bindParam(2, $contrasenia, PDO::PARAM_STR, 50); 
@@ -21,9 +13,9 @@
         $queryEmpleado->bindParam(2, $apellidos, PDO::PARAM_STR, 50);
         $queryEmpleado->bindParam(3, $idUsuario, PDO::PARAM_INT);
         if($queryEmpleado->execute()){
-            header("Location: ../vista-admin.php");
+            header("Location: ../registrar-empleado.php");
                 
         }
     }
-    
+
 ?>

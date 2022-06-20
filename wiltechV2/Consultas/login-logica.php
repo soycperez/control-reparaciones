@@ -30,12 +30,14 @@
                     //Recuperamos los datos que nos importan para la sesión
                     $cargo =  $result_array[0]["cargo"];
                     $usuario = $result_array[0]["usuario"]; 
-                    $usuario = $result_array[0]["idEmpleado"]; 
+                    $idUsuario = $result_array[0]["idEmpleado"]; 
+                    $nombre = $result_array[0]["nombre"];
                     //Iniciamos el guardado de la sesión 
                     session_start(); 
-                    $_SESSION["idEmpleado"]  = $usuario; 
+                    $_SESSION["idEmpleado"]  = $idUsuario; 
                     $_SESSION["usuario"]  = $usuario; 
                     $_SESSION["cago"] = $cargo;
+                    $_SESSION["nombre"] = $nombre;
                     //$_SESSION["contrasenia"] = $contrasenia;
                     if($cargo == 'admin'){
                         header("Location: ./vista-admin.php");

@@ -1,6 +1,7 @@
 <?php
     include("./Consultas/verificar-sesion.php");
     verificar::consulEmpleado();
+    $nombre = $_SESSION["nombre"];
 ?>
 
 <!DOCTYPE html>
@@ -27,5 +28,6 @@
 
     </header>
     <h1>Vista para trabajador</h1>
+    <h2><?php print_r($nombre); unset($nombre);  ?></h2>
 </body>
 </html>
