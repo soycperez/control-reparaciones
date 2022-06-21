@@ -1,5 +1,6 @@
 use reparaciones; 
-SELECT E.idEmpleado, E.nombre, E.apellidos, U.idUsuario, U.usuario, U.contrasenia, U.cargo  FROM empleados E
+SELECT E.idEmpleado, E.nombre, E.apellidos, U.idUsuario, U.usuario, U.contrasenia, U.cargo 
+FROM empleados E
 JOIN usuarios U
 ON E.idUsuario = U.idUsuario
 WHERE U.cargo != 'admin';
@@ -68,3 +69,29 @@ JOIN equipos Eq
 	ON (Eq.idCliente = C.idCliente)
     WHERE Eq.estado = 1
 group by Eq.idEmpleado; 
+
+/*Cargar equipos pendiente del empleado*/
+SELECT E.idEmpleado, E.nombre, E.apellidos, C.nombre, Eq.marca, Eq.idEquipo, Eq.modelo, Eq.observaciones, Eq.estado
+FROM empleados E
+JOIN clientes C 
+	ON (E.idEmpleado = C.idEmpleado)
+JOIN equipos Eq 
+	ON (Eq.idCliente = C.idCliente)
+    WHERE Eq.estado = 1 && E.idUsuario = 49;
+
+/*Cargar historial de equipos*/
+SELECT E.idEmpleado, E.nombre, E.apellidos, C.nombre, Eq.marca, Eq.idEquipo, Eq.modelo, Eq.observaciones, Eq.estado
+FROM empleados E
+JOIN clientes C 
+	ON (E.idEmpleado = C.idEmpleado)
+JOIN equipos Eq 
+	ON (Eq.idCliente = C.idCliente)
+    WHERE Eq.estado = 0 && E.idUsuario = 49;
+
+SELECT E.idEmpleado, E.nombre, E.apellidos, C.nombre as cNombre, Eq.idEquipo, Eq.marca, Eq.modelo, Eq.observaciones, Eq.estado
+            FROM empleados E
+            JOIN clientes C 
+                ON (E.idEmpleado = C.idEmpleado)
+            JOIN equipos Eq 
+                ON (Eq.idCliente = C.idCliente)
+                WHERE Eq.estado = 1 && E.idUsuario = 49;
