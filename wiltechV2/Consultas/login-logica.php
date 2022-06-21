@@ -9,7 +9,7 @@
                 $usuario = $_POST['usuario'];
                 $contrasenia = $_POST['contrasenia'];
                 //Realizamos consulta
-                $queryLogin = "SELECT E.idEmpleado, E.nombre, U.usuario, U.cargo  
+                $queryLogin = "SELECT E.idEmpleado, E.nombre, U.idUsuario, U.usuario, U.cargo  
                                 FROM empleados E
                                 INNER JOIN usuarios U ON E.idUsuario = U.idUsuario
                                 WHERE u.usuario = ? AND u.contrasenia = ?";
@@ -30,11 +30,13 @@
                     //Recuperamos los datos que nos importan para la sesión
                     $cargo =  $result_array[0]["cargo"];
                     $usuario = $result_array[0]["usuario"]; 
-                    $idUsuario = $result_array[0]["idEmpleado"]; 
+                    $idEmpleado = $result_array[0]["idEmpleado"]; 
+                    $idUsuario = $result_array[0]["idUsuario"]; 
                     $nombre = $result_array[0]["nombre"];
                     //Iniciamos el guardado de la sesión 
                     session_start(); 
-                    $_SESSION["idEmpleado"]  = $idUsuario; 
+                    $_SESSION["idUsuario"]  = $idUsuario; 
+                    $_SESSION["idEmpleado"]  = $idEmpleado; 
                     $_SESSION["usuario"]  = $usuario; 
                     $_SESSION["cago"] = $cargo;
                     $_SESSION["nombre"] = $nombre;

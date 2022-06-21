@@ -22,32 +22,20 @@ label{
     padding: 3px;
 }
 
-.btnEditar{
-    border-radius: 150px;
-    padding: 5px;
-    margin: 5px;
-    background: #F4D03F;
-    display: inline;
-    text-decoration: none;
-    color: black;
-}
-.btnEditar:hover{
-        background: #F9E79F;
-        color: black;
-}
-
-
-
 .btnEliminar{
-    border-radius: 150px;
-    padding: 5px;
-    margin: 5px;
-    background: #E74C3C;
-    display: inline;
     text-decoration: none;
     color: black;
 }
 .btnEliminar:hover{
-        background: #F1948A;
-        color: black;
+    color: white;
+}
+
+.btnEditar{
+    text-decoration: none;
+    color: black;
+}
+
+
+.btnEditar:hover{
+        color: white;
 }

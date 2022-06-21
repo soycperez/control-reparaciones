@@ -4,7 +4,7 @@
             include ("./Conexion/conexion.php");
             //Establecemos conexión
             $coneccion = conexion::conectar();
-            $queryLogin = "SELECT E.idEmpleado, E.nombre as eNombre, E.apellidos , C.nombre as cNombre, Eq.marca, Eq.modelo, Eq.observaciones, Eq.estado
+            $queryLogin = "SELECT E.idEmpleado, E.nombre as eNombre, E.apellidos , C.nombre as cNombre, Eq.idEquipo, Eq.marca, Eq.modelo, Eq.observaciones, Eq.estado
             FROM empleados E
             JOIN clientes C 
                 ON (E.idEmpleado = C.idEmpleado)

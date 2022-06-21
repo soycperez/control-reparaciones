@@ -1,0 +1,40 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif; 
+    
+    background: #4e54c8;  
+    margin: 10px; 
+    padding: 60px;
+}
+.cuerpo{
+    width: auto;
+    height: 50%;
+    display: inline-block;
+}
+
+img{
+    
+    width: 25%;
+    height: 25%;
+    float: left;
+}
+
+.formulario{
+    
+    margin: auto;
+    float: left;
+}
+
+.formulario label{
+    margin: 10px;
+    padding: 10px 0px;
+}
+
+.formulario input, button{
+    margin: 10px;
+}

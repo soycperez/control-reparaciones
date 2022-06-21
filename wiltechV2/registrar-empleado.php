@@ -44,7 +44,7 @@ $nombre = $_SESSION["nombre"];
         <div class="modal-dialog">
             <div class="modal-content">
                 <br>
-                <form method="post" id="formLogin" action="">
+                <form method="post" id="formLogin" action="" autocomplete="off">
                     <b><label>Nombre:</label></b>
                     <input type="text" id="nombre" name="nombre">
                     <br>
@@ -99,10 +99,11 @@ $nombre = $_SESSION["nombre"];
                             <td><?php echo $reparacion["usuario"] ?></td>
                             <td><?php echo $reparacion["cargo"] ?></td>
                             <td>
-                                <b><a class="btnEditar" href="editar-empleado.php?id=<?php echo $reparacion["idEmpleado"] . "&nombre=" . $reparacion["nombre"]
-                                                                                            . "&apellidos=" . $reparacion["apellidos"] . "&usuario=" . $reparacion["usuario"] . "&cargo=" . $reparacion["cargo"] ?>">Editar</a></b>
-                                <!--<b><a class="btnEliminar" href="./Consultas/deleteEmpleado.php?id=<?php //echo $reparacion["idUsuario"] 
-                                                                                                        ?>" >Eliminar</a></b>-->
+                                <button class="btn btn-warning"><b><a class="btnEditar" href="editar-empleado.php?id=<?php echo $reparacion["idEmpleado"] . "&nombre=" . $reparacion["nombre"]
+                                                                                            . "&apellidos=" . $reparacion["apellidos"] . "&usuario=" . $reparacion["usuario"] . "&cargo=" . $reparacion["cargo"] ?>">Editar</a></b></button>
+                                <!--Boton eliminar metodo en peticiones.php-->
+                                <!--<button class="btn btn-danger"><b><a class="btnEliminar" href="./Consultas/peticiones.php?idEmpleado=<?php echo $reparacion["idEmpleado"] ."&idUsuario=".$reparacion["idUsuario"]."" ?>">Eliminar</a></b></button>-->
+                                
                             </td>
                         </tr>
                 <?php

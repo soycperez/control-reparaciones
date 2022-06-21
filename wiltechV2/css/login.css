@@ -3,8 +3,9 @@ body{
     /*background: url(../img/repaparaciones.png) no-repeat center center fixed;
     background-size: auto ;
     animation: movi 200s infinite linear alternate;*/
-    background: rgb(2,0,36);
-    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 27%, rgba(34,186,217,1) 91%);
+    font-family: 'Exo', sans-serif;
+    background: #4e54c8;  
+    width: 100%;
 }
 
 /*

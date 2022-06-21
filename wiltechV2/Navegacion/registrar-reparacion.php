@@ -42,7 +42,7 @@ $nombre = $_SESSION["nombre"];
 
     <div class="contenedor">
         <div class="formulario">
-            <form method="POST" id="formLogin" action="">
+            <form method="POST" id="formLogin" action="" autocomplete="off" >
                 <h5>Registrar Cliente e información del equipo</h5> <br>
                 Nombre: <input type="text" name="nombre">
                 Marca: <input type="text" name="marca">

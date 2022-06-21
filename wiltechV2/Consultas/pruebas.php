@@ -53,14 +53,27 @@
     $queryReparaciones = $coneccion->prepare($queryReparaciones);
     $queryReparaciones->execute();
     $result_array = $queryReparaciones->fetchAll(PDO::FETCH_ASSOC);*/
-    $queryLogin = "SELECT E.idEmpleado, E.nombre, E.apellidos
+    /*$queryLogin = "SELECT E.idEmpleado, E.nombre, E.apellidos
     FROM empleados E
     JOIN usuarios U
     ON E.idUsuario = U.idUsuario
     WHERE U.cargo != 'admin'"; 
             $queryLogin = $coneccion->prepare($queryLogin);
             $queryLogin->execute();
-            $result_array = $queryLogin->fetchAll(PDO::FETCH_ASSOC);
+            $result_array = $queryLogin->fetchAll(PDO::FETCH_ASSOC);*/
+
+
+            $queryReparaciones = "SELECT E.idEmpleado, E.nombre, E.apellidos, C.nombre as cNombre, Eq.idEquipo, Eq.marca, Eq.modelo, Eq.observaciones, Eq.estado
+            FROM empleados E
+            JOIN clientes C 
+                ON (E.idEmpleado = C.idEmpleado)
+            JOIN equipos Eq 
+                ON (Eq.idCliente = C.idCliente)
+                WHERE Eq.estado = 1 && E.idUsuario = 49"; 
+            $queryReparaciones = $coneccion->prepare($queryReparaciones);
+            //$queryReparaciones->bindParam(1, $idEmpleado, PDO::PARAM_INT); 
+            $queryReparaciones->execute();
+            $result_array = $queryReparaciones->fetchAll(PDO::FETCH_ASSOC);
     if(!empty($result_array)){
         //Verificamos datos en vector
         echo "<br>";
