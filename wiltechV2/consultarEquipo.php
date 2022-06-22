@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/consultarEquipo.css">
 
-
-    <title>Consulte su equipo</title>
+    <title>Consultar Equipo</title>
 </head>
 
 <body>

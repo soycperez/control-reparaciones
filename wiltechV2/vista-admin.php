@@ -11,7 +11,7 @@ $idEmpleado = $_SESSION["idEmpleado"];
 
 <head>
     <meta charset="UTF-8">
-    <title>Admin</title>
+    <title>Vista Admin</title>
     <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/admin.css">
     <!-- BOOTSTRAP y FONT AWESOME para el estilo de la pagina-->

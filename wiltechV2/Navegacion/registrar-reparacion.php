@@ -3,9 +3,19 @@ include("../Consultas/verificar-sesion.php");
 include("../Consultas/consultas-reparaciones.php");
 include ("../Conexion/conexion.php");
 //Establecemos conexión
+session_start(); 
+//Si las variables NO estan definidas el metodo ISSET() retorna FALSE
+if(!isset($_SESSION["idEmpleado"],$_SESSION["usuario"], $_SESSION["cago"])){
+    header("Location: ../vista-login.php");
+}else{
+    $cargo = $_SESSION["cago"]; 
+    if($cargo != 'admin'){
+        header("Location: ../vista-trabajador.php");
+    }
+}
 $coneccion = conexion::conectar();
 $reparaciones = new reparaciones(); 
-verificar::consulAdmin();
+//verificar::consulAdmin();
 //Acedemos a las variables de sesión
 $nombre = $_SESSION["nombre"];
 ?>
@@ -15,7 +25,7 @@ $nombre = $_SESSION["nombre"];
 
 <head>
     <meta charset="UTF-8">
-    <title>Admin</title>
+    <title>Registrar Reparación</title>
     <link rel="stylesheet" href="../css/nav.css">
     <!--Mi CSS-->
     <link rel="stylesheet" href="../css/reparacion.css">
@@ -42,14 +52,14 @@ $nombre = $_SESSION["nombre"];
 
     <div class="contenedor">
         <div class="formulario">
-            <form method="POST" id="formLogin" action="" autocomplete="off" >
+            <form method="POST" id="formReparacion" action="" autocomplete="off" >
                 <h5>Registrar Cliente e información del equipo</h5> <br>
-                Nombre: <input type="text" name="nombre">
-                Marca: <input type="text" name="marca">
-                <br>Modelo: <input type="text" name="modelo">
+                Nombre: <input type="text" id="nombreRepara" name="nombre">
+                Marca: <input type="text" id="marcaRepara" name="marca">
+                <br>Modelo: <input type="text" id="modeloRepara" name="modelo">
                 Estado: <input type="text" name="estado" readonly value="Reparacion">
-                <br>Observaciones: <br> <textarea maxlength="250" placeholder="Máximo 250 caracteres, contando espacios" name="comentarios" rows="10" cols="70"></textarea>
-                Asignar reparación: <select name="asignar">
+                <br>Observaciones: <br> <textarea id="comentariosRepara" maxlength="250" placeholder="Máximo 250 caracteres, contando espacios" name="comentarios" rows="10" cols="70"></textarea>
+                Asignar reparación: <select id="asignarRepara" name="asignar">
                     <option value="0">Seleccione empleado</option>
                     <?php
                         $arrayEmpleados = $reparaciones->obtenerEmpleados($coneccion);
@@ -100,7 +110,7 @@ $nombre = $_SESSION["nombre"];
 
 
     <!-- JQUERY, BOOSTRAP y mis JS-->
-    <script src="./js/validaciones.js"></script>
+    <script src="../js/validaciones.js"></script>
     <script src="js/BoostrapV5Js/jquery-3.6.0.min.js"></script>
     <script src="./js/BoostrapV5Js/bootstrap.min.js"></script>
 </body>

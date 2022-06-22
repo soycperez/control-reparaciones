@@ -27,7 +27,7 @@ $consultasEmpleado = new consultasEmpleados();
     <!-- BOOTSTRAP y FONT AWESOME para el estilo de la pagina-->
     <link rel="stylesheet" href="./css/FontAwesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/BoostrapV5/bootstrap.min.css">
-    <title>Document</title>
+    <title>Vista Trabajador</title>
 </head>
 
 <body>
@@ -59,6 +59,7 @@ $consultasEmpleado = new consultasEmpleados();
                 <th>ID</th>
                 <th>Empleado</th>
                 <th>Cliente</th>
+                <th>ID Equipo</th>
                 <th>Marca</th>
                 <th>Modelo</th>
                 <th>Observaciones</th>
@@ -76,6 +77,7 @@ $consultasEmpleado = new consultasEmpleados();
                         <td><?php echo $reparacion["idEmpleado"] ?></td>
                         <td><?php echo $reparacion["nombre"] . " " . $reparacion["apellidos"]  ?></td>
                         <td><?php echo $reparacion["cNombre"] ?></td>
+                        <td><?php echo $reparacion["idEquipo"] ?></td>
                         <td><?php echo $reparacion["marca"] ?></td>
                         <td><?php echo $reparacion["modelo"] ?></td>
                         <td><?php echo $reparacion["observaciones"] ?></td>

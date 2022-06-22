@@ -1,5 +1,7 @@
 <?php
     class consultasAdmin{
+
+        //Metodo para consultar todos los equipos con reparaciones activas o en estado 1. 
         public static function reparacionesActivas(){
             include ("./Conexion/conexion.php");
             //Establecemos conexión
@@ -10,16 +12,22 @@
                 ON (E.idEmpleado = C.idEmpleado)
             JOIN equipos Eq 
                 ON (Eq.idCliente = C.idCliente)
-                WHERE Eq.estado = 1
-            group by C.nombre";
+                WHERE Eq.estado = 1";
+            //Preparamos la consulta
             $queryLogin = $coneccion->prepare($queryLogin);
+            //Ejecutamos la consulta
             $queryLogin->execute();
+            //Por ultimo regresamos la consulta obtenida a traves de un array. Este array
+            //tendra la posición [0] y como identificador la llave (En este caso las columnas)
+            //seleccionadas
             $result_array = $queryLogin->fetchAll(PDO::FETCH_ASSOC);
             if(!empty($result_array)){
+                //Retornamos el arayy si es distitno de vacio (empty)
                 return $result_array;
             }else return null;
         }
 
+        //Metodo para retornar todos los empleados registrados 
         public static function empleadosRegistrados(){
             include ("./Conexion/conexion.php");
             //Establecemos conexión
@@ -36,7 +44,10 @@
             }else return null;
         }
 
+
+        //Metodo para insertar empleados
         public static function registrarEmpleado(){
+            //Verificamos que los datos POST sean definidos con el metodo isset.
             if(isset($_POST['nombre']) && isset($_POST['apellidos']) &&
              isset($_POST['cargo']) && isset($_POST['usuario']) && isset($_POST['contrasenia'])){
                 //Realizamos conexión
@@ -73,6 +84,7 @@
             }
         }
 
+        //Metodo para obtener un empleado según su ID
         public static function obtenerEmpleado($id){
             if(!empty($id)){
                 //Realizamos conexión
@@ -96,6 +108,7 @@
             }
         }
 
+        //Actualizamos el empleado segin datos enviados por el formulario
         public static function updateEmpleado(){
             if(isset($_POST['idEmpleado']) && isset($_POST['nombre']) && isset($_POST['apellidos']) && isset($_POST['usuario']) && isset($_POST['cargo'])){
                 //Realizamos conexión

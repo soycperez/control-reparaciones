@@ -12,7 +12,7 @@ $nombre = $_SESSION["nombre"];
 
 <head>
     <meta charset="UTF-8">
-    <title>Admin</title>
+    <title>Registrar Empleado</title>
     <link rel="stylesheet" href="./css/nav.css">
     <!--Mi CSS-->
     <link rel="stylesheet" href="css/registrar.css">
@@ -44,7 +44,7 @@ $nombre = $_SESSION["nombre"];
         <div class="modal-dialog">
             <div class="modal-content">
                 <br>
-                <form method="post" id="formLogin" action="" autocomplete="off">
+                <form method="post" id="registrarEmpleado" action="" autocomplete="off">
                     <b><label>Nombre:</label></b>
                     <input type="text" id="nombre" name="nombre">
                     <br>

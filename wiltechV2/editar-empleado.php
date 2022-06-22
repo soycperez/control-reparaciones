@@ -9,7 +9,7 @@ verificar::consulAdmin();
 
 <head>
     <meta charset="UTF-8">
-    <title>Admin</title>
+    <title>Editar Empleado</title>
     <link rel="stylesheet" href="./css/nav.css">
     <!--Mi CSS-->
     <link rel="stylesheet" href="./css/registrar.css">

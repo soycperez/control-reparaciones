@@ -3,7 +3,18 @@ include("../Consultas/verificar-sesion.php");
 include ("../Conexion/conexion.php");
 include("../Consultas/consultas-empleado.php");
 //Veficiamos empleado
-verificar::consulEmpleado();
+//verificar::consulEmpleado();
+//iniamos sesión registrada
+session_start(); 
+//Si las variables NO estan definidas el metodo ISSET() retorna FALSE
+if(!isset($_SESSION["idEmpleado"],$_SESSION["usuario"], $_SESSION["cago"])){
+    header("Location: ../vista-login.php");
+}else{
+    $cargo = $_SESSION["cago"]; 
+    if($cargo != 'tecnico'){
+        header("Location: ../vista-admin.php");
+    }
+}
 //Hacemos conección
 $coneccion = conexion::conectar();
 //Recuperamos datos de la sesión
@@ -27,7 +38,7 @@ $consultasEmpleado = new consultasEmpleados();
     <!-- BOOTSTRAP y FONT AWESOME para el estilo de la pagina-->
     <link rel="stylesheet" href="../css/FontAwesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/BoostrapV5/bootstrap.min.css">
-    <title>Document</title>
+    <title>Historial Trabajador</title>
 </head>
 
 <body>
@@ -59,6 +70,7 @@ $consultasEmpleado = new consultasEmpleados();
                 <th>ID</th>
                 <th>Empleado</th>
                 <th>Cliente</th>
+                <th>ID Equipo</th>
                 <th>Marca</th>
                 <th>Modelo</th>
                 <th>Observaciones</th>
@@ -75,6 +87,7 @@ $consultasEmpleado = new consultasEmpleados();
                         <td><?php echo $reparacion["idEmpleado"] ?></td>
                         <td><?php echo $reparacion["nombre"] . " " . $reparacion["apellidos"]  ?></td>
                         <td><?php echo $reparacion["cNombre"] ?></td>
+                        <td><?php echo $reparacion["idEquipo"] ?></td>
                         <td><?php echo $reparacion["marca"] ?></td>
                         <td><?php echo $reparacion["modelo"] ?></td>
                         <td><?php echo $reparacion["observaciones"] ?></td>
